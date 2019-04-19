@@ -3,7 +3,8 @@ layout: post
 title:  "在服务器端对django的服务器进行操作"
 date:   2019-04-13
 category: technology
-tags: Django Ubuntu
+permalink: blog
+tags: django
 
 # Author.
 author: LuoXiaoHei
