@@ -11,7 +11,7 @@
 						{% for post in paginator.posts %} 	
 							<h2>
 								<img class="title-image" src="{{ "/img/dna.png"}}"/>
-								<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+								<a class="post-link" href="{{ post.url}}">{{ post.title }}</a>
 							</h2>
 							<div class="author" style="margin-top: -10px;">Posted by
 								<i class="fa fa-user"></i> {{ post.author}}</a>
@@ -20,7 +20,7 @@
 							<div class="excerpt">{{ post.excerpt }}</div>
 							<div class="readmore" style="float: left;">
 								{% if post.content | post_contains_excerpt_tag %}
-									<a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+									<a href="{{ post.url}}">Read more</a>
 								{% endif %}
 							</div>								
 					</div>
@@ -101,7 +101,7 @@
 								{% assign cat_name = cat | first %}
 								{% assign cat_size = cat | last | size %}
 								{% assign cat_slug = cat_name | slugify  %}
-									<a class="bold" href="/category/{{cat_slug | prepend: site.baseurl}}">
+									<a class="bold" href="/category/{{cat_slug}}">
 										{{cat_name}} ({{cat_size}})
 									</a>
                         </div>
@@ -134,7 +134,7 @@
                             {% assign tag_name = tag | first %}
                             {% assign tag_size = tag | last | size %}
                             {% assign tag_slug = tag_name | slugify  %}
-                                <a class="tag-label bold" href="/tag/{{tag_slug | prepend: site.baseurl}}">
+                                <a class="tag-label bold" href="/tag/{{tag_slug}}">
                                     {{tag_name}} ({{tag_size}})
                                 </a>
                             {% endfor %}
