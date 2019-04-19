@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "机器学习WebService搭建（一）------前言"
+date:   2019-04-16
+categories: technology computer
+tags: django python sklearn
+
+# author
+author: LuoXiaoHei
+---
+最近在做一个机器学习的webservice，基本已经完成了大体的框架。主要是为了实现能够在服务器端自动训练机器学习的模型，然后也可以直接进行测试。项目可以从我的github查看，https://github.com/LuoXiaoHeics/ML。
+现在开始总结这次学习过程中的一些经验，以作记录。<!-- more -->
+
+## 配置
+由于python在机器学习方向有很多的框架，比如sklearn，tensorflow等等，我从一开始就考虑用python来完成这个项目。
+- 机器学习依赖库，目前选择了sklearn库，并没有添加进入深度学习的库，之后再做补充
+- web框架，第一次做python的web应用，对很多框架多不是很了解。比如flask，django等等，大概查阅资料之后选择了django。一方面是因为django有很多模块都开发的较完全，（当然也会不好扩展一些），另一方面就是感觉django比较亲切（玄学理由），相关文档也很多。反正最终选择了django来做这个项目，最终配置服务器为django+uwsgi+nginx。
+- 服务器选择的是阿里云的服务器，配置为ubuntu 18.04
+- 开发阶段环境windows 10 VSCode
+
+## 内容
+这个系列文章主要包括以下内容
+- anaconda配置
+- git的使用
+- django入门
+	- django的orm操作
+	- django的网页模板
+- sklearn入门
+- django+sklearn 开发
+- 阿里云服务器使用
+- uwsgi与nginx配置
+- WebService的部署
+
+慢慢做更新，也会写一些在开发过程中遇到的一些坑

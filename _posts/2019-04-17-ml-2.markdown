@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "机器学习WebService搭建（二）------anaconda配置"
+date:   2019-04-17
+categories: technology computer
+tags: django python sklearn
+
+# Author.
+author: LuoXiaoHei
+---
+Anaconda是一个用于科学计算的Python发行版，支持 Linux, Mac, Windows系统，提供了包管理与环境管理的功能，可以很方便地解决多版本python并存、切换以及各种第三方包安装问题。Anaconda利用工具/命令conda来进行package和environment的管理，并且已经包含了Python和相关的配套工具。
+简单的说，anaconda的主要作用是控制版本，什么是控制版本呢，我们经常会因为python的版本问题以及各种包的依赖关系感觉苦恼，而anaconda提供了很好的解决方案。<!-- more -->
+
+主要功能： 
+-  建立python的虚拟环境，避免污染源环境
+-  安装新的包的时候，自动更新各种依赖包
+-  自带jupyter notebook可用于markdown和python代码的同时编写
+- （其他的我不了解的功能）
+
+# 安装
+windows下的安装包可以在官网 https://www.anaconda.com/download/ 或者清华大学镜像网站 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 中下载，找到自己对应的操作系统和需要的版本即可。
+
+Q： 选择版本2.x还是3.x
+A： anaconda的python版本会对应着它base环境下的python版本，（base环境在后面会提到）
+
+打开exe后安装过程叫比较简单了，记得勾选添加环境变量的两个选项，不然的话就得自己配置环境变量了。
+
+安装结束后，可以在cmd中输入代码，检查是否安装成功
+
+```python
+conda --version 
+#输出 ： conda 4.6.9
+```
+# conda操作
+- 新建python虚拟环境，可以在anaconda安装路径下，看到新建的环境
+
+```python
+# 新建一个虚拟环境，testenv为新环境的名称，python版本可以自己根据需要填写，
+# 此处用的3.6版本，源环境可以没有改环境，conda会自动下载
+conda create --name testenv python=3.6
+```
+
+- 激活与退出python虚拟环境
+
+```python
+#进入虚拟环境
+conda activate testenv
+
+# 退出虚拟环境
+conda deactivate
+
+#进入base虚拟环境
+conda activate 
+```
+
+- 安装包
+
+```python
+# 激活环境后，就可以用conda install在该环境下安装包，比如numpy
+conda install numpy
+```
+
+# Jupyter Notebook使用
+控制台切换到项目路径后，输入一下代码就可进入jupyter，它自带有服务器，猜测应该是Tornado。
+
+```python 
+jupyter notebook
+```
+
+点击页面右侧的New->python即可新建python笔记本，jupyter是基于IPython的，挺好用的。
+
+Q： 如何在jupyter新建python内核
+A ： 如果是经常使用不同的python版本的同学，很容易发现只有一个python版本。想使用其他版本的python的话，是需要新建python内核的
+
+步骤：
+- 安装ipykernel包
+- 在cmd进入想要版本的环境
+- 输入代码
+
+```python
+# XXXX为你为该kernel的命名，比如我命名的为ML
+python -m ipykernel install --name XXXX
+```
+市面上很多python机器学习的书也都是用的anaconda和jupyter来演示的，大概基础操作应该就这么多了，其他的内容就需要大家自己摸索一下啦。
