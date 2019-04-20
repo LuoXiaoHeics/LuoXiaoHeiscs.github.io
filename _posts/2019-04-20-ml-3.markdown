@@ -4,17 +4,21 @@ title:  "机器学习WebService搭建（三）------gitbash的使用"
 date:   2019-04-20
 categories: computer
 permalink: essay
-tags: programming_tool
+tags: programming-tool
 
 # Author.
 author: LuoXiaoHei
 ---
+
 Github是一个基于git的代码托管平台，付费用户可以建私人仓库，我们一般的免费用户只能使用公共仓库，也就是代码要公开。
 Github由Chris Wanstrath, PJ Hyett 与Tom Preston-Werner三位开发者在2008年4月创办。迄今拥有59名全职员工，主要提供基于git的版本托管服务。<!-- more -->
 
 ## git bash
+
 - 安装
+
 - 打开bash设置用户信息
+
 ```python
 # 设置bash的用户名和email，和github的用户名，email相同
 git config --global user.name "XXX"
@@ -23,17 +27,22 @@ git config --global user.email "XXX@XX.com"
 #查看用户名和email
 git config --global --list 
 ```
+
 - 生成ssh key  
+
  ```ssh-keygen -t rsa -C "your_email@youremail.com"```
+
  记得保存key的路径，打开id_rsa.pub，复制里面的key，在github网页端，进行用户的ssh key设置。这样子你的电脑和你的github就绑定在了一起。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190420212818452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3ODQ0MTQy,size_16,color_FFFFFF,t_70)
+
 - clone项目
+
 ```
 git clone "项目的git"
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2019042021305661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3ODQ0MTQy,size_16,color_FFFFFF,t_70)
 - 同步远程仓库与本地仓库
+
 修改过代码之后，以此进行
+
 ```python
 # 中间有空格
 git add . 
@@ -43,7 +52,9 @@ git commit -m "提交修改信息"
 # 首次push时可以添加 -u，新建master分支，之后就不用在输入-u
 git push -u origin master 
 ```
-其他命令可见： https://git-scm.com/docs
+
+其他命令可见： https://git-scm.com/docs.
+
 后来发现：http://www.runoob.com/w3cnote/git-guide.html 菜鸟教程上讲的也挺详细的
 
 Q：如果提交代码之后，github并未显示contribution
