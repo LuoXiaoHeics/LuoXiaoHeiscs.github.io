@@ -3,7 +3,7 @@ layout: post
 title:  "在服务器端对django的服务器进行操作"
 date:   2019-04-13
 category: technology
-permalink: essay
+permalink: essay1
 tags: django
 
 # Author.

@@ -3,7 +3,7 @@ layout: post
 title:  "机器学习WebService搭建（三）------gitbash的使用"
 date:   2019-04-20
 categories: computer
-permalink: essay
+permalink: essay4
 tags: programming-tool
 
 # Author.
